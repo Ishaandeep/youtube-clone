@@ -25,7 +25,7 @@ export function TopBar() {
           <img src="/thumbnails/bell.png" />
         </button>
         <button className="mr-6 w-10">
-          <img src="/thumbnails/user.png" />
+          <img src="/thumbnails/user.png" alt="userButton" />
         </button>
       </div>
     </div>
