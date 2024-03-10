@@ -1,6 +1,14 @@
+import { useNavigate } from "react-router-dom";
+
 export function YoutubeCard() {
+  const navigate = useNavigate();
   return (
-    <div className="grid grid-rows-16 ml-3 w-1/4 ">
+    <div
+      onClick={() => {
+        navigate("/video");
+      }}
+      className="grid grid-rows-16 ml-3 w-1/4 "
+    >
       <img
         className="row-span-11 rounded-lg"
         src="/thumbnails/photo1.jpg"

@@ -1,18 +1,30 @@
-import { useState } from "react";
+import { Suspense, useState } from "react";
 import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
 import "./App.css";
 import { YoutubeCard } from "./components/YoutubeCard";
 import { TopBar } from "./components/TopBar";
 import { YoutubeCards } from "./components/YoutubeCards";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 function App() {
   const [count, setCount] = useState(0);
 
   return (
     <>
-      <TopBar />
-      <YoutubeCards />
+      <BrowserRouter>
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <Suspense fallback={"loadingHome.."}>
+                <TopBar />
+                <YoutubeCards />
+              </Suspense>
+            }
+          />
+        </Routes>
+      </BrowserRouter>
     </>
   );
 }

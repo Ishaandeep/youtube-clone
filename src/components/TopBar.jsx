@@ -1,12 +1,11 @@
 import { Squash as Hamburger } from "hamburger-react";
 import { useState } from "react";
 import { SearchBar } from "./SearchBar";
+import { useNavigate } from "react-router-dom";
 
 export function TopBar() {
   const [isOpen, setOpen] = useState(false);
-  function handleClick() {
-    alert("hi");
-  }
+  const navigate = useNavigate();
   return (
     <div className="flex justify-between ">
       <div className="flex">
@@ -14,8 +13,8 @@ export function TopBar() {
           <Hamburger toggled={isOpen} toggle={setOpen} />
         </div>
 
-        <button className="w-40">
-          <img src="/thumbnails/ytLogo.png" onClick={handleClick}></img>
+        <button onClick={() => navigate("/")} className="w-40">
+          <img src="/thumbnails/ytLogo.png"></img>
         </button>
       </div>
       <SearchBar />
