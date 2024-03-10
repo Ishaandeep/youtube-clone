@@ -8,16 +8,18 @@ export function TopBar() {
     alert("hi");
   }
   return (
-    <div className="flex">
-      <div className="mt-8">
-        <Hamburger toggled={isOpen} toggle={setOpen} />
-      </div>
+    <div className="flex justify-between ">
+      <div className="flex">
+        <div className="mt-8">
+          <Hamburger toggled={isOpen} toggle={setOpen} />
+        </div>
 
-      <button className="flex-none w-40">
-        <img src="/thumbnails/ytLogo.png" onClick={handleClick}></img>
-      </button>
+        <button className="w-40">
+          <img src="/thumbnails/ytLogo.png" onClick={handleClick}></img>
+        </button>
+      </div>
       <SearchBar />
-      <div className="ml-80 mt-8">
+      <div className="flex">
         <button className="mr-6 w-10">
           <img src="/thumbnails/video-camera.png" />
         </button>
