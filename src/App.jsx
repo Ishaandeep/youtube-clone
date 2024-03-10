@@ -4,6 +4,7 @@ import viteLogo from "/vite.svg";
 import "./App.css";
 import { YoutubeCard } from "./components/YoutubeCard";
 import { TopBar } from "./components/TopBar";
+import { YoutubeCards } from "./components/YoutubeCards";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -11,7 +12,7 @@ function App() {
   return (
     <>
       <TopBar />
-      <YoutubeCard />
+      <YoutubeCards />
     </>
   );
 }
