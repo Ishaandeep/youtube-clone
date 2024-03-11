@@ -6,6 +6,7 @@ import { YoutubeCard } from "./components/YoutubeCard";
 import { TopBar } from "./components/TopBar";
 import { YoutubeCards } from "./components/YoutubeCards";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { VideoPlayer } from "./components/VideoPlayer";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -20,6 +21,15 @@ function App() {
               <Suspense fallback={"loadingHome.."}>
                 <TopBar />
                 <YoutubeCards />
+              </Suspense>
+            }
+          />
+          <Route
+            path="/video"
+            element={
+              <Suspense fallback={"loadingHome.."}>
+                <TopBar />
+                <VideoPlayer />
               </Suspense>
             }
           />
